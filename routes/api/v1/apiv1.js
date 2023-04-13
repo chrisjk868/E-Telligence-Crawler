@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     try {
       const contents = await spawn('ls', ['-al']);
       console.log(contents.toString());
-      const pythonProcess = await spawn('python', ['hello.py']);
+      const pythonProcess = await spawn('python3', ['hello.py']);
       // const pythonProcess = await spawn('python', ['eTelligenceCrawler/crawl.py', query]);
       console.log(pythonProcess.toString());
     } catch (error) {
