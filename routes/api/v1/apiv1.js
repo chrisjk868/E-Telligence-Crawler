@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
   try {
     // run the python script
     // http://localhost:3000/
+    const productionUrl = 'https://worrisome-blue-pumps.cyclic.app/';
     const url = 'api/v1/return?productName=';
     const query = req.query.productName;
     console.log(`Got ${query}`);
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
     }
     try {
       console.log('Fetching from database...');
-      const results = await fetch(url + query).then(resp => resp.json());
+      const results = await fetch(productionUrl + url + query).then(resp => resp.json());
       res.json(results);
     } catch (error) {
       res.status(500).json({ 'status': 'failure', 'error': error});
