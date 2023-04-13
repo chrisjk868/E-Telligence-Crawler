@@ -8,9 +8,10 @@ import { dirname } from 'path';
 import apiv1Router from './routes/api/v1/apiv1.js';
 import models from './models.js';
 
-var app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+var app = express();
 
 app.use(logger('dev'));
 app.use(json({ limit: '10mb' }));
