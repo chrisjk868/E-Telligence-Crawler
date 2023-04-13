@@ -42,7 +42,8 @@ button.addEventListener('click', async () => {
 
 
     // set input to api endpoint
-    const response = await fetch('http://localhost:3000/api/v1?productName=' + query, {
+    // http://localhost:3000/
+    const response = await fetch('https://worrisome-blue-pumps.cyclic.app/api/v1?productName=' + query, {
       method: 'GET'
     });
 
