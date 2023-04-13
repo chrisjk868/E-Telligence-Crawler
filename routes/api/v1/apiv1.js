@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
     const query = req.query.productName;
     console.log(`Got ${query}`);
     try {
+      const dir = await spawn('pwd');
       const pythonProcess = await spawn('python3', ['eTelligenceCrawler/crawl.py', query]);
     } catch (error) {
       console.log(error);
