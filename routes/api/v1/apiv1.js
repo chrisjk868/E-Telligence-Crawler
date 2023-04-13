@@ -13,10 +13,13 @@ router.get('/', async (req, res) => {
     const query = req.query.productName;
     console.log(`Got ${query}`);
     try {
+      const child = await spawn('dir', [], {shell: true});
       const contents = await spawn('ls', ['-al']);
       console.log(contents.toString());
-      const pythonProcess = await spawn('python3', ['hello.py']);
       // const pythonProcess = await spawn('python', ['eTelligenceCrawler/crawl.py', query]);
+      const pythonProcess = await spawn('python3', ['hello.py']);
+      const pyContent = await spawn('cat', ['hello.py']);
+      console.log(pyContent.toString());
       console.log(pythonProcess.toString());
     } catch (error) {
       console.log(error);
