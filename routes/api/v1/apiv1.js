@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
     try {
       const dir = await spawn('pwd');
       const contents = await spawn('ls', ['-al']);
-      console.log(dir.toStirng());
-      console.log(contents.toStirng());
+      console.log(dir.toString());
+      console.log(contents.toString());
       const pythonProcess = await spawn('python3', ['eTelligenceCrawler/crawl.py', query]);
     } catch (error) {
       console.log(error);
