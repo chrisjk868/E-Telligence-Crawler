@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node app"
+    "start": "node ./bin/www.cjs"
   },
   "dependencies": {
     "await-spawn": "^4.0.2",

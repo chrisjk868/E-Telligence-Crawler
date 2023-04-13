@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     try {
       const pythonProcess = await spawn('python', ['eTelligenceCrawler/crawl.py', query]);
     } catch (error) {
-      console.log(error.stderr.toString());
+      console.log(error);
     }
     try {
       console.log('Fetching from database...');
