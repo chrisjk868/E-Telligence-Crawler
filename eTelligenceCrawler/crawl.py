@@ -10,6 +10,8 @@ from scrapy.utils.project import get_project_settings
 
 if __name__ == "__main__":
 
+  print('Crawling starts...')
+
   search_term = sys.argv[1]
   
   process = CrawlerProcess(get_project_settings())
